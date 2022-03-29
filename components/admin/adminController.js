@@ -4,7 +4,7 @@ import Admin from "./adminModel"
 export const createAdmin = async(req,res,next) =>{
     try{
         logger.info("adminController")
-        const {name,email,contactNo,password,confirmPassword}= req.body
+        const {name,email,mobileNo,password,confirmPassword}= req.body
 
         const isExist = await Admin.findOne({email})
 
@@ -16,7 +16,7 @@ export const createAdmin = async(req,res,next) =>{
         const admin = await Admin.create({
             name,
             email,
-            contactNo,
+            mobileNo,
             password,
             confirmPassword
     
