@@ -3,7 +3,7 @@ dotenv.config();
 
 
 const server = {
-    port:process.env.port
+    port:process.env.PORT
 }
 
 const db = {
@@ -16,5 +16,6 @@ const db = {
 
 export default {
     db,
-    server
+    server,
+    jwtSecret:process.env.JWT_SECRET
 }
