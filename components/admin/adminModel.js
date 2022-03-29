@@ -28,7 +28,7 @@ const adminSchema = new Schema({
         maxlength: [16,'Password sould less than 16 character'],
         select: false
     },
-    passwordConfirm:{
+    confirmPassword:{
         type: String,
         required: [true, 'Please confirm your password'],
         validate: {
@@ -38,11 +38,7 @@ const adminSchema = new Schema({
             message: 'Password must be same'
 
         }
-    },
-    passwordChangedAt: Date,
-    passwordResetToken: String,
-    passwordResetExpires: Date,
-    
+    }
 
 });
 
