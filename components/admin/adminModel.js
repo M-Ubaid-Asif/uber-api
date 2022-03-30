@@ -2,8 +2,9 @@ import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 import validator from 'validator';
 const { isEmail } = validator;
+import bcrypt from 'bcrypt';
 
-
+// creating User schema
 
 const adminSchema = new Schema({
     name:{
@@ -41,6 +42,31 @@ const adminSchema = new Schema({
     }
 
 });
+
+// hashing password before save using bcrypt
+adminSchema.pre("save",async function(next){
+    if(this.isModified("password")){
+        const hashPass =await bcrypt.hash(this.password,10);
+        this.password = hashPass
+        this.confirmPassword = undefined
+        next();
+    }
+    next();
+})
+
+
+// compare password function
+adminSchema.methods.comparePassword = async function(password){
+    return await bcrypt.compare(password,this.password)
+}
+
+//hide password from doc
+adminSchema.methods.toJSON = function(){
+    const admin = this;
+    const adminObj = admin.toObject();
+    delete adminObj.password;
+    return adminObj
+}
 
 
 
