@@ -1,7 +1,7 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
 
 // creating a booking schema
-const bookingSchema = new Schema(
+const bookingSchema = new mongoose.Schema(
   {
     currentAddress: {
       //Geo JSON
@@ -28,11 +28,11 @@ const bookingSchema = new Schema(
       required: [true, "price is required"],
     },
     cab: {
-      type: Schema.ObjectId,
+      type: mongoose.Schema.ObjectId,
       ref: "Cab",
     },
     bookedBy: {
-      type: Schema.ObjectId,
+      type: mongoose.Schema.ObjectId,
       ref: "User",
       required: [true, "user is required"],
     },
@@ -50,6 +50,6 @@ bookingSchema.pre(/^find/, function (next) {
   this.populate("bookedBy").populate("cab");
 });
 
-const Booking = model("Booking", bookingSchema);
+const Booking = mongoose.model("Booking", bookingSchema);
 
 export default Booking;
