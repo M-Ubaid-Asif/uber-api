@@ -6,7 +6,11 @@ import db from "./connections/dbConnection.js";
 import config from "./config/config.js";
 import cookieParser from "cookie-parser";
 import router from "./components/index.js";
-import { mongoseErrors } from "./helpers/errorHandler.js";
+import {
+  mongoseErrors,
+  productionErrors,
+  developmentErrors,
+} from "./helpers/errorHandler.js";
 
 const app = express();
 
