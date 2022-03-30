@@ -1,12 +1,9 @@
-import express from 'express';
-import { createAdmin } from './adminController';
-
+import express from "express";
+import { createAdmin, loginAdmin } from "./adminController";
 
 const adminRouter = express.Router();
 
-
 // router.use(authController.protect);
-
 
 // router
 //   .route('/')
@@ -18,6 +15,7 @@ const adminRouter = express.Router();
 //   .get(adminController.getadmin)
 //   .patch(adminController.updateUser)
 //   .delete(adminController.deleteUser);
-adminRouter.post('/register',createAdmin)
+adminRouter.post("/register", createAdmin);
+adminRouter.post("/login", loginAdmin);
 
 export default adminRouter;
