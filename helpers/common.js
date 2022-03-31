@@ -32,7 +32,9 @@ export const find = async (model) => {
 // find all cabs
 export const findCabs = async (model, filter) => {
   try {
-    const doc = await model.find(filter);
+    console.log("hahhahah");
+    const doc = await model.findOne(filter);
+    // console.log("----->");
     return doc ? doc : false;
   } catch (error) {
     return false;
