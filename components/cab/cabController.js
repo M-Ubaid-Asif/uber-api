@@ -1,5 +1,12 @@
 import Cab from "./cabModel";
-import { creteOne, getOne, updateOne, deleteOne } from "./handlerFactory.js";
+
+import {
+  createOne,
+  getOne,
+  getAll,
+  updateOne,
+  deleteOne,
+} from "./handlerFactory.js";
 
 export const createCab = createOne(Cab);
 
