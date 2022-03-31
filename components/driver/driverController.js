@@ -1,13 +1,13 @@
 import logger from "../../config/logger";
-import Admin from "./adminModel";
+import Driver from "./driverModel";
 import { create, findOne } from "../../helpers/common";
 
-export const createAdmin = async (req, res, next) => {
+export const createDriver = async (req, res, next) => {
   try {
-    logger.info("adminController");
+    logger.info("driverController");
     const { name, email, mobileNo, password, confirmPassword } = req.body;
 
-    const isExist = await Admin.findOne({ email });
+    const isExist = await Driver.findOne({ email });
     logger.info("run");
     if (isExist) {
       return res.status(409).json({
@@ -22,15 +22,15 @@ export const createAdmin = async (req, res, next) => {
       password,
       confirmPassword,
     };
-    logger.info("create ad");
-    const admin = await create(Admin, data);
-    logger.info("admin create", admin);
-    admin
+
+    const driver = await create(Driver, data);
+
+    driver
       ? res.status(200).json({
-          message: "Registration success",
+          message: "Driver Registration success",
         })
       : res.status(400).json({
-          message: "Registration failed",
+          message: "Driver Registration failed",
         });
   } catch (error) {
     next(new Error(error));
@@ -39,19 +39,20 @@ export const createAdmin = async (req, res, next) => {
 
 // Login Admin
 
-export const loginAdmin = async (req, res, next) => {
+export const loginDriver = async (req, res, next) => {
   try {
-    logger.info("inside user controller login user");
+    logger.info("inside driver controller login driver");
     const { email, password } = req.body;
 
-    const admin = await findOne(admin, { email });
-    if (!admin) {
+    const driver = await Driver.findOne({ email });
+
+    if (!driver) {
       return res.status(401).json({
         message: "Invalid credentials",
       });
     }
 
-    const isValid = await admin.comparePassword(password);
+    const isValid = await driver.comparePassword(password);
 
     if (!isValid) {
       return res.status(401).json({
