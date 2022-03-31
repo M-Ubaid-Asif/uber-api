@@ -66,7 +66,7 @@ export const loginAdmin = async (req, res, next) => {
       email: admin.email,
     };
     const token = signJwt(payload);
-
+    //Setting cookie
     res.cookie("jwt", token);
 
     return res.status(200).json({
