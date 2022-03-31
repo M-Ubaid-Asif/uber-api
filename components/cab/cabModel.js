@@ -1,21 +1,24 @@
 import mongoose from "mongoose";
-const { schema, model } = mongoose;
+const { Schema, model } = mongoose;
 
 // Create Schema for cab
 
-const cabSchema = new schema({
+const cabSchema = new Schema({
   booked: {
     type: Boolean,
     default: false,
   },
-  location: {
+  currentLoc: {
     //GeoJSON
     type: {
       type: String,
       default: "Point",
-      enum: ["point"],
+      enum: ["Point"],
     },
-    coordinates: [Number], //[lng, lat]
+    coordinates: {
+      type: [Number],
+      required: true,
+    }, //[lng, lat]
   },
   driver: {
     type: Schema.ObjectId,
