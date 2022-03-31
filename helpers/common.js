@@ -30,7 +30,7 @@ export const find = async (model) => {
 };
 
 // find all cabs
-export const findCabs = async (model, filter) => {
+export const findCab = async (model, filter) => {
   try {
     console.log("hahhahah");
     const doc = await model.findOne(filter);
