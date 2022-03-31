@@ -1,9 +1,10 @@
 import express from "express";
-import { createBooking } from "./bookingController";
+import { userAuth } from "../../middlewares/auth";
+import { createBooking, deleteBooking } from "./bookingController";
 
 const bookingRouter = express.Router();
-
-bookingRouter.post("/", createBooking);
-// router.delete("/", deleteBooking);
+// all booking routes
+bookingRouter.post("/", userAuth, createBooking);
+bookingRouter.delete("/:id", userAuth, deleteBooking);
 
 export default bookingRouter;
