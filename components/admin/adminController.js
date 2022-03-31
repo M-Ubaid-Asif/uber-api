@@ -44,7 +44,7 @@ export const loginAdmin = async (req, res, next) => {
     logger.info("inside user controller login user");
     const { email, password } = req.body;
 
-    const admin = await findOne(admin, { email });
+    const admin = await findOne(Admin, { email });
     if (!admin) {
       return res.status(401).json({
         message: "Invalid credentials",
