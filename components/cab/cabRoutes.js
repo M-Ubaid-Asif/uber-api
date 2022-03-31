@@ -9,6 +9,7 @@ import {
 } from "./cabController";
 const cabRouter = express.Router();
 
+// all cab routes
 cabRouter.route("/").get(adminAuth, getAllCabs).post(adminAuth, createCab);
 
 cabRouter

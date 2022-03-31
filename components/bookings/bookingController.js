@@ -47,7 +47,7 @@ export const createBooking = async (req, res, next) => {
 
     console.log("=====>", cab);
 
-    // if no cabs are available
+    // if no cabs  are available
     if (!cab) {
       return res.status(404).json({
         message: "no cab are available in your area",
