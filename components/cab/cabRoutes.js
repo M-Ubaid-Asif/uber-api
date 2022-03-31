@@ -1,4 +1,5 @@
 import express from "express";
+import { adminAuth } from "../../middlewares/auth";
 import {
   getAllCabs,
   createCab,
@@ -8,8 +9,12 @@ import {
 } from "./cabController";
 const cabRouter = express.Router();
 
-cabRouter.route("/").get(getAllCabs).post(createCab);
+cabRouter.route("/").get(adminAuth, getAllCabs).post(adminAuth, createCab);
 
-cabRouter.route("/:id").get(getCab).patch(updateCab).delete(deleteCab);
+cabRouter
+  .route("/:id")
+  .get(adminAuth, getCab)
+  .patch(adminAuth, updateCab)
+  .delete(adminAuth, deleteCab);
 
 export default cabRouter;

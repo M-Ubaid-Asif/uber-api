@@ -1,5 +1,5 @@
 import getDistanceFromLatLonInKm from "../../helpers/calDistance";
-import { findCab, findOne } from "../../helpers/common";
+import { deleteOne, findCab, findOne } from "../../helpers/common";
 import Cab from "../cab/cabModel";
 import Booking from "./bookingModel";
 
@@ -36,7 +36,7 @@ export const createBooking = async (req, res, next) => {
     // finding cab in 10 miles
     const filterOption = {
       booked: false,
-      current: {
+      currentLoc: {
         $geoWithin: {
           $centerSphere: [[lat1, lon1], radius],
         },
@@ -71,6 +71,28 @@ export const createBooking = async (req, res, next) => {
         data: bookcab,
       });
     }
+  } catch (error) {
+    next(new Error(error));
+  }
+};
+
+export const deleteBooking = async (req, res, next) => {
+  try {
+    console.log("heheheh");
+    const _id = req.params.id;
+    const user = req.user;
+
+    const data = await Booking.deleteOne({ _id, bookedBy: user._id });
+    console.log(data);
+
+    return data
+      ? res.status(200).json({
+          message: "booking cancel",
+          data,
+        })
+      : res.status(400).json({
+          message: "cannot found any booking!",
+        });
   } catch (error) {
     next(new Error(error));
   }
