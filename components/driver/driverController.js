@@ -60,6 +60,15 @@ export const loginDriver = async (req, res, next) => {
       });
     }
 
+    const payload = {
+      id: driver._id,
+      name: driver.name,
+      email: driver.email,
+    };
+    const token = signJwt(payload);
+    //Setting cookie
+    res.cookie("jwt", token);
+
     return res.status(200).json({
       message: "login success",
     });
