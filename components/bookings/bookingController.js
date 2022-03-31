@@ -62,6 +62,7 @@ export const createBooking = async (req, res, next) => {
       cab: cab._id,
       bookedBy: user.id,
     });
+    // if booking
     if (bookcab) {
       cab.booked = true;
       await cab.save();
