@@ -1,3 +1,4 @@
+import logger from "../../config/logger";
 import getDistanceFromLatLonInKm from "../../helpers/calDistance";
 import { create, deleteOne, findOne } from "../../helpers/common";
 import Cab from "../cab/cabModel";
@@ -5,6 +6,7 @@ import Booking from "./bookingModel";
 
 export const createBooking = async (req, res, next) => {
   try {
+    logger.info("inside createbooking controller");
     const { currentAddress, destinationAddress } = req.body;
     const user = req.user;
     //   const bookedBy = req.user.id;
@@ -79,7 +81,7 @@ export const createBooking = async (req, res, next) => {
 
 export const deleteBooking = async (req, res, next) => {
   try {
-    console.log("heheheh");
+    logger.info("inside deletebooking controllers");
     const _id = req.params.id;
     const user = req.user;
 
@@ -89,7 +91,8 @@ export const deleteBooking = async (req, res, next) => {
 
     if (!data) {
       res.status(400).json({
-        message: "cannot found any booking!",
+        message:
+          "you dont any booking yet! or your booking is already canceled",
       });
     }
 
@@ -102,14 +105,40 @@ export const deleteBooking = async (req, res, next) => {
       message: "booking cancel",
       data,
     });
+  } catch (error) {
+    next(new Error(error));
+  }
+};
 
-    return data
+export const getNearByCab = async (req, res, next) => {
+  try {
+    logger.info("inside getNearBycab controller");
+    const { lat, lon } = req.body;
+    if (!lat || !lon) {
+      return res.status(400).json({
+        status: "failed",
+        message: "please provide latitude and longitude",
+      });
+    }
+
+    const radius = 10 / 3963.2;
+
+    const filter = {
+      booked: false,
+      currentLoc: {
+        $geoWithin: {
+          $centerSphere: [[lat, lon], radius],
+        },
+      },
+    };
+
+    const cabs = await Cab.find(filter);
+    return cabs.length > 0
       ? res.status(200).json({
-          message: "booking cancel",
-          data,
+          cabs,
         })
-      : res.status(400).json({
-          message: "cannot found any booking!",
+      : res.status(403).json({
+          message: "no cab are available in your area!",
         });
   } catch (error) {
     next(new Error(error));
