@@ -34,6 +34,7 @@ export const deleteOne = async (model, data) => {
   try {
     console.log("deleteone");
     console.log(data);
+    data.isDeleted = false;
     const doc = await model.findOneAndUpdate(data, {
       isDeleted: true,
     });
