@@ -17,10 +17,10 @@
 
 #### create .env file and add the details
 
-PORT=
-MONGO_URI=
-JWT_SECRET=
-NODE_ENV=
+- PORT=
+- MONGO_URI=
+- JWT_SECRET=
+- NODE_ENV=
 
 #### Run (in terminal)
 
