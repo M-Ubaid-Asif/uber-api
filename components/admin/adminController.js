@@ -29,6 +29,7 @@ export const createAdmin = async (req, res, next) => {
     admin
       ? res.status(200).json({
           message: "Registration success",
+          data: admin,
         })
       : res.status(400).json({
           message: "Registration failed",
