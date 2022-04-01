@@ -1,5 +1,5 @@
 import getDistanceFromLatLonInKm from "../../helpers/calDistance";
-import { deleteOne, findCab, findOne } from "../../helpers/common";
+import { create, deleteOne, findOne } from "../../helpers/common";
 import Cab from "../cab/cabModel";
 import Booking from "./bookingModel";
 
@@ -33,7 +33,7 @@ export const createBooking = async (req, res, next) => {
     const price = Math.ceil(15 * disInKm);
     console.log(price);
     const radius = 10 / 3963.2;
-    // finding cab in 10 miles
+    //filter for finding cab in 10 miles
     const filterOption = {
       booked: false,
       currentLoc: {
@@ -43,7 +43,7 @@ export const createBooking = async (req, res, next) => {
       },
     };
 
-    const cab = await findCab(Cab, filterOption);
+    const cab = await findOne(Cab, filterOption);
 
     console.log("=====>", cab);
 
@@ -54,14 +54,15 @@ export const createBooking = async (req, res, next) => {
       });
     }
 
-    // booking cab
-    const bookcab = await Booking.create({
+    const data = {
       currentAddress,
       destinationAddress,
       price,
       cab: cab._id,
       bookedBy: user.id,
-    });
+    };
+    // booking cab
+    const bookcab = await create(Booking, data);
     // if booking
     if (bookcab) {
       cab.booked = true;
@@ -82,8 +83,25 @@ export const deleteBooking = async (req, res, next) => {
     const _id = req.params.id;
     const user = req.user;
 
-    const data = await Booking.deleteOne({ _id, bookedBy: user._id });
-    console.log(data);
+    const filter = { _id, user: user.id };
+    const data = await deleteOne(Booking, filter);
+    console.log("---->", data);
+
+    if (!data) {
+      res.status(400).json({
+        message: "cannot found any booking!",
+      });
+    }
+
+    console.log(data.cab._id);
+    const cab = await Cab.findById(data.cab._id);
+    cab.booked = false;
+    await cab.save();
+
+    res.status(200).json({
+      message: "booking cancel",
+      data,
+    });
 
     return data
       ? res.status(200).json({
