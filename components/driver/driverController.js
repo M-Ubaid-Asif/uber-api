@@ -1,6 +1,7 @@
 import logger from "../../config/logger";
 import Driver from "./driverModel";
 import { create, findOne } from "../../helpers/common";
+import { signJwt } from "../../utils/jwt";
 
 export const createDriver = async (req, res, next) => {
   try {
@@ -28,6 +29,7 @@ export const createDriver = async (req, res, next) => {
     driver
       ? res.status(200).json({
           message: "Driver Registration success",
+          data: driver,
         })
       : res.status(400).json({
           message: "Driver Registration failed",

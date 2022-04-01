@@ -25,6 +25,10 @@ const cabSchema = new Schema({
     ref: "User",
     required: [true, "A Cab must have a driver"],
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 //Populate the driver
