@@ -38,6 +38,10 @@ const driverSchema = new Schema({
       message: "Password must be same",
     },
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 // hashing password before save using bcrypt
