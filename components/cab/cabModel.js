@@ -22,7 +22,7 @@ const cabSchema = new Schema({
   },
   driver: {
     type: Schema.ObjectId,
-    ref: "User",
+    ref: "Driver",
     required: [true, "A Cab must have a driver"],
   },
   isDeleted: {
