@@ -22,6 +22,6 @@
 - JWT_SECRET =
 - NODE_ENV =
 
-#### Run (in terminal)
+#### Run (In terminal)
 
 npm run dev or npm run start
