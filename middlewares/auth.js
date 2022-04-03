@@ -14,15 +14,15 @@ export const userAuth = async function (req, res, next) {
       });
     }
     const token = cookie.split("=")[1];
-    console.log(token);
+    // console.log(token);
     const decode = verifyJwt(token);
-    console.log(decode);
+    // console.log(decode);
 
     const user = await findOne(User, { _id: decode.id });
-    console.log(user);
+    // console.log(user);
     if (!user) {
       return res.status(401).json({
-        message: "access denied",
+        message: "access denied! not authenticated",
       });
     }
 
@@ -45,12 +45,12 @@ export const adminAuth = async function (req, res, next) {
       });
     }
     const token = cookie.split("=")[1];
-    console.log(token);
+    // console.log(token);
     const decode = verifyJwt(token);
-    console.log(decode);
+    // console.log(decode);
 
     const admin = await findOne(Admin, { _id: decode.id });
-    console.log(admin);
+    // console.log(admin);
     if (!admin) {
       return res.status(401).json({
         message: "access denied! this route can be access by admin only",
@@ -75,15 +75,15 @@ export const driverAuth = async function (req, res, next) {
       });
     }
     const token = cookie.split("=")[1];
-    console.log(token);
+    // console.log(token);
     const decode = verifyJwt(token);
-    console.log(decode);
+    // console.log(decode);
 
     const driver = await findOne(Driver, { _id: decode.id });
-    console.log(driver);
+    // console.log(driver);
     if (!driver) {
       return res.status(401).json({
-        message: "Access denied",
+        message: "Access denied not authenticated",
       });
     }
 
