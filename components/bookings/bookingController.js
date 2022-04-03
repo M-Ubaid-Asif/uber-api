@@ -1,6 +1,6 @@
 import logger from "../../config/logger";
 import getDistanceFromLatLonInKm from "../../helpers/calDistance";
-import { create, deleteOne, findOne } from "../../helpers/common";
+import { create, deleteOne, find, findOne } from "../../helpers/common";
 import Cab from "../cab/cabModel";
 import Booking from "./bookingModel";
 
@@ -20,8 +20,8 @@ export const createBooking = async (req, res, next) => {
       .toString()
       .split(",");
 
-    console.log("start location", currentLocation);
-    console.log("end location", destinationLocation);
+    // console.log("start location", currentLocation);
+    // console.log("end location", destinationLocation);
 
     const lat1 = currentLocation[0];
     const lon1 = currentLocation[1];
@@ -29,11 +29,11 @@ export const createBooking = async (req, res, next) => {
     const lon2 = destinationLocation[1];
     // getting distance for calculating the price
     const disInKm = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
-    console.log(disInKm);
+    // console.log(disInKm);
 
     // using math.ceil to get exact value not decimal value
     const price = Math.ceil(15 * disInKm);
-    console.log(price);
+    // console.log(price);
     const radius = 10 / 3963.2;
     //filter for finding cab in 10 miles
     const filterOption = {
@@ -46,8 +46,6 @@ export const createBooking = async (req, res, next) => {
     };
 
     const cab = await findOne(Cab, filterOption);
-
-    console.log("=====>", cab);
 
     // if no cabs  are available
     if (!cab) {
@@ -92,7 +90,7 @@ export const deleteBooking = async (req, res, next) => {
     if (!data) {
       res.status(400).json({
         message:
-          "you dont any booking yet! or your booking is already canceled",
+          "you dont have any booking yet! or your booking is already canceled",
       });
     }
 
@@ -102,8 +100,8 @@ export const deleteBooking = async (req, res, next) => {
     await cab.save();
 
     res.status(200).json({
-      message: "booking cancel",
-      data,
+      status: "success",
+      message: "booking canceled",
     });
   } catch (error) {
     next(new Error(error));
@@ -139,6 +137,28 @@ export const getNearByCab = async (req, res, next) => {
         })
       : res.status(403).json({
           message: "no cab are available in your area!",
+        });
+  } catch (error) {
+    next(new Error(error));
+  }
+};
+
+export const getMybookings = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const data = {
+      bookedBy: user.id,
+    };
+    const pastbookings = await find(Booking, data);
+
+    pastbookings.length > 0
+      ? res.status(200).json({
+          status: "success",
+          data: pastbookings,
+        })
+      : res.status(403).json({
+          status: "failed",
+          data: "No bookings",
         });
   } catch (error) {
     next(new Error(error));

@@ -1,11 +1,22 @@
 import catchAsync from "../../utils/catchAsyn";
 import AppError from "../../utils/appError";
 import APIFeatures from "../../utils/apiFeatures";
+import Driver from "../driver/driverModel";
+import Cab from "./cabModel";
 
 //Factory function for create
 export function createOne(Model) {
   try {
     return catchAsync(async (req, res, next) => {
+      const { driver } = req.body;
+      const isAlreadyCabDriver = await Cab.findOne({ driver });
+      console.log(isAlreadyCabDriver);
+      if (isAlreadyCabDriver) {
+        return res.status(400).json({
+          status: "failed",
+          message: "this driver is already a cab driver",
+        });
+      }
       const doc = await Model.create(req.body);
 
       res.status(201).json({
