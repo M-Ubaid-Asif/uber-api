@@ -1,6 +1,6 @@
 import logger from "../../config/logger";
 import getDistanceFromLatLonInKm from "../../helpers/calDistance";
-import { create, deleteOne, findOne } from "../../helpers/common";
+import { create, deleteOne, find, findOne } from "../../helpers/common";
 import Cab from "../cab/cabModel";
 import Booking from "./bookingModel";
 
@@ -139,6 +139,28 @@ export const getNearByCab = async (req, res, next) => {
         })
       : res.status(403).json({
           message: "no cab are available in your area!",
+        });
+  } catch (error) {
+    next(new Error(error));
+  }
+};
+
+export const getMybookings = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const data = {
+      bookedBy: user.id,
+    };
+    const pastbookings = await find(Booking, data);
+
+    pastbookings.length > 0
+      ? res.status(200).json({
+          status: "success",
+          data: pastbookings,
+        })
+      : res.status(403).json({
+          status: "failed",
+          data: "No bookings",
         });
   } catch (error) {
     next(new Error(error));
