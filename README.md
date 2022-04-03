@@ -28,4 +28,4 @@ npm run dev or npm run start
 
 #### Postman Link
 
-https://go.postman.co/workspace/My-Workspace~1b5ade2a-a050-4fae-8f21-4b1a5ed9bc5f/collection/18359793-6688c0a1-77fb-485d-a13c-52afac972089?action=share&creator=18359793
+https://www.getpostman.com/collections/468cce3b5f47a336082f
