@@ -36,7 +36,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "register user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ubaid\",\r\n    \"email\":\"ubaid6664@gmail.com\",\r\n    \"mobileNo\":9684376688,\r\n    \"password\":\"12345678\",\r\n    \"confirmPassword\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/user/register",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-Yil2WYyr8wEri93AMkQwGmmrl5A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:25:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"registration success\",\n    \"data\": {\n        \"name\": \"ubaid\",\n        \"email\": \"ubaid6664@gmail.com\",\n        \"mobileNo\": 9684376688,\n        \"isDeleted\": false,\n        \"_id\": \"62499257e0262db8a44c003f\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "login user",
@@ -66,7 +135,80 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "login user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ubaid6664@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/user/login",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDk5MjU3ZTAyNjJkYjhhNDRjMDAzZiIsIm5hbWUiOiJ1YmFpZCIsImVtYWlsIjoidWJhaWQ2NjY0QGdtYWlsLmNvbSIsImlhdCI6MTY0ODk4ODc2NSwiZXhwIjoxNjQ4OTkyMzY1fQ.nuLrUDmiFZuQJIYw3tyougbd0ozXaOJ_RELHffe5O7Q; Path=/"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-1kZjyyqCNo1Oj/t1Y5EmCqBR99s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:26:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"login success\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -101,7 +243,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "register driver",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"abc\",\r\n    \"email\":\"abc6664@gmail.com\",\r\n    \"mobileNo\":9184373792,\r\n    \"password\":\"12345678\",\r\n    \"confirmPassword\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/driver/register",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"driver",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "172"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ac-P6rmGytLOTTkfud65tz3wjhaPW4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:22:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Driver Registration success\",\n    \"data\": {\n        \"name\": \"abc\",\n        \"email\": \"abc6664@gmail.com\",\n        \"mobileNo\": 9184373792,\n        \"isDeleted\": false,\n        \"_id\": \"62499182e0262db8a44c002a\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "login",
@@ -131,7 +342,80 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"abc6664@gmail.com\",\r\n    \"password\":\"12345678\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/driver/login",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"driver",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDk5MTgyZTAyNjJkYjhhNDRjMDAyYSIsIm5hbWUiOiJhYmMiLCJlbWFpbCI6ImFiYzY2NjRAZ21haWwuY29tIiwiaWF0IjoxNjQ4OTkwMzgyLCJleHAiOjE2NDg5OTM5ODJ9.wFFwLL8sdWeOPLewvrEukgG70Hspt3GrZ3bjusGSScI; Path=/"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-1kZjyyqCNo1Oj/t1Y5EmCqBR99s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:53:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"login success\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -165,7 +449,75 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "createcab",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"driver\": \"62499182e0262db8a44c002a\",\r\n    \"currentLoc\": {\r\n        \"coordinates\": [23.594157,72.366911]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/cab",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"cab"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-IHYXUe9nUXkcl7/NqUkuQbvqwCs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:24:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"data\": {\n            \"booked\": false,\n            \"currentLoc\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    23.594157,\n                    72.366911\n                ]\n            },\n            \"driver\": \"62499182e0262db8a44c002a\",\n            \"isDeleted\": false,\n            \"_id\": \"624991f3e0262db8a44c0033\",\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "get all cab",
@@ -185,7 +537,66 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "get all cab",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/cab",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"cab"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-ViFntgAcLJsxrSy9A/Sugg5vtGM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:24:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"result\": 1,\n    \"data\": {\n        \"data\": [\n            {\n                \"currentLoc\": {\n                    \"type\": \"Point\",\n                    \"coordinates\": [\n                        23.594157,\n                        72.366911\n                    ]\n                },\n                \"_id\": \"624991f3e0262db8a44c0033\",\n                \"booked\": false,\n                \"driver\": {\n                    \"_id\": \"62499182e0262db8a44c002a\",\n                    \"name\": \"abc\",\n                    \"email\": \"abc6664@gmail.com\",\n                    \"mobileNo\": 9184373792,\n                    \"isDeleted\": false\n                },\n                \"isDeleted\": false\n            }\n        ]\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "get a cab",
@@ -206,7 +617,67 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "get a cab",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/cab/624991f3e0262db8a44c0033",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"cab",
+										"624991f3e0262db8a44c0033"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-awW/drsgF2Q2GIG2udtRnudDtaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:25:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"data\": {\n            \"currentLoc\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    23.594157,\n                    72.366911\n                ]\n            },\n            \"_id\": \"624991f3e0262db8a44c0033\",\n            \"booked\": false,\n            \"driver\": {\n                \"_id\": \"62499182e0262db8a44c002a\",\n                \"name\": \"abc\",\n                \"email\": \"abc6664@gmail.com\",\n                \"mobileNo\": 9184373792,\n                \"isDeleted\": false\n            },\n            \"isDeleted\": false,\n            \"__v\": 0\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -240,7 +711,75 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "booking",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentAddress\":{\r\n        \"coordinates\": [23.594157, 72.366911],\r\n        \"address\":\"nagpur\"\r\n    },\r\n    \"destinationAddress\":{\r\n        \"coordinates\": [23.218964, 71.960515],\r\n        \"address\":\"mumbai\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/booking",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"booking"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "435"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b3-/vJgaO5mzilKSbIMJi4pigbRdjE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:28:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"cab booked\",\n    \"data\": {\n        \"currentAddress\": {\n            \"type\": \"Point\",\n            \"coordinates\": [\n                23.594157,\n                72.366911\n            ],\n            \"address\": \"nagpur\"\n        },\n        \"destinationAddress\": {\n            \"type\": \"Point\",\n            \"address\": \"mumbai\",\n            \"coordinates\": [\n                23.218964,\n                71.960515\n            ]\n        },\n        \"price\": 883,\n        \"cab\": \"624991f3e0262db8a44c0033\",\n        \"bookedBy\": \"62499257e0262db8a44c003f\",\n        \"isDeleted\": false,\n        \"_id\": \"624992fde0262db8a44c0060\",\n        \"createdAt\": \"2022-04-03T12:28:45.777Z\",\n        \"updatedAt\": \"2022-04-03T12:28:45.777Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "delete booking",
@@ -270,7 +809,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "delete booking",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/booking/624992fde0262db8a44c0060",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"booking",
+										"624992fde0262db8a44c0060"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-+l06pRh99BUdmxlD31w4qlzGn9E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:31:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"booking canceled\"\n}"
+						}
+					]
 				},
 				{
 					"name": "get near cabs",
@@ -303,7 +911,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "get near cabs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lat\":23.594157,\r\n    \"lon\":72.366911\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/booking/",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"booking",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-TaLFbIeVdXpIjXSWdAhSCK3BEk8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:31:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cabs\": [\n        {\n            \"currentLoc\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    23.594157,\n                    72.366911\n                ]\n            },\n            \"_id\": \"624991f3e0262db8a44c0033\",\n            \"booked\": false,\n            \"driver\": {\n                \"_id\": \"62499182e0262db8a44c002a\",\n                \"name\": \"abc\",\n                \"email\": \"abc6664@gmail.com\",\n                \"mobileNo\": 9184373792,\n                \"isDeleted\": false\n            },\n            \"isDeleted\": false,\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "get my bookings",
@@ -336,7 +1013,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "get my bookings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/booking/mybookings",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"booking",
+										"mybookings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "773"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"305-1ZJuHgTBy4u/XSHXsMr6M4wye9g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:27:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"currentAddress\": {\n                \"type\": \"Point\",\n                \"coordinates\": [\n                    23.594157,\n                    72.366911\n                ],\n                \"address\": \"nagpur\"\n            },\n            \"destinationAddress\": {\n                \"type\": \"Point\",\n                \"address\": \"mumbai\",\n                \"coordinates\": [\n                    23.218964,\n                    71.960515\n                ]\n            },\n            \"_id\": \"62499294e0262db8a44c004a\",\n            \"price\": 883,\n            \"cab\": {\n                \"currentLoc\": {\n                    \"type\": \"Point\",\n                    \"coordinates\": [\n                        23.594157,\n                        72.366911\n                    ]\n                },\n                \"_id\": \"624991f3e0262db8a44c0033\",\n                \"booked\": true,\n                \"driver\": {\n                    \"_id\": \"62499182e0262db8a44c002a\",\n                    \"name\": \"abc\",\n                    \"email\": \"abc6664@gmail.com\",\n                    \"mobileNo\": 9184373792,\n                    \"isDeleted\": false\n                },\n                \"isDeleted\": false,\n                \"__v\": 0\n            },\n            \"bookedBy\": {\n                \"_id\": \"62499257e0262db8a44c003f\",\n                \"name\": \"ubaid\",\n                \"email\": \"ubaid6664@gmail.com\",\n                \"mobileNo\": 9684376688,\n                \"isDeleted\": false,\n                \"__v\": 0\n            },\n            \"isDeleted\": false,\n            \"createdAt\": \"2022-04-03T12:27:00.249Z\",\n            \"updatedAt\": \"2022-04-03T12:27:00.249Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
@@ -371,7 +1117,80 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"ubaid6664@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/admin/login",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNDk5MWEzZTAyNjJkYjhhNDRjMDAyZCIsIm5hbWUiOiJ1YmFpZCIsImVtYWlsIjoidWJhaWQ2NjY0QGdtYWlsLmNvbSIsImlhdCI6MTY0ODk4ODU4NiwiZXhwIjoxNjQ4OTkyMTg2fQ.IjQHbE_3t-5Gt3kmd5kCbTqw0cQH0vzUctcI4fyxYvs; Path=/"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-1kZjyyqCNo1Oj/t1Y5EmCqBR99s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:23:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"login success\"\n}"
+						}
+					]
 				},
 				{
 					"name": "register",
@@ -404,7 +1223,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ubaid\",\r\n    \"email\":\"ubaid6664@gmail.com\",\r\n    \"mobileNo\":9284375688,\r\n    \"password\":\"12345678\",\r\n    \"confirmPassword\":\"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}:8000/api/v1/admin/register",
+									"host": [
+										"{{URL}}"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-vOqqXRZa0IG/ZmNTsBlKjDH2gv4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Apr 2022 12:22:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Registration success\",\n    \"data\": {\n        \"name\": \"ubaid\",\n        \"email\": \"ubaid6664@gmail.com\",\n        \"mobileNo\": 9284375688,\n        \"isDeleted\": false,\n        \"_id\": \"624991a3e0262db8a44c002d\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				}
 			]
 		}
