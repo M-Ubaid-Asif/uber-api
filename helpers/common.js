@@ -20,9 +20,13 @@ export const findOne = async (model, data) => {
 };
 
 // find all doc
-export const find = async (model) => {
+export const find = async (model, data) => {
   try {
-    const doc = await model.find({ isDeleted: false });
+    if (!data) {
+      data = {};
+    }
+    data.isDeleted = false;
+    const doc = await model.find(data);
     return doc ? doc : false;
   } catch (error) {
     return false;
