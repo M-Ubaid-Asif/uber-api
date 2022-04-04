@@ -27,4 +27,4 @@
 npm run dev or npm run start
 
 #### Postman Link
-https://www.getpostman.com/collections/468cce3b5f47a336082f
+https://documenter.getpostman.com/view/18359793/UVysyc9U
